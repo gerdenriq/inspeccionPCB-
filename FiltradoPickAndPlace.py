@@ -1,4 +1,4 @@
-import pandas as pd
+wimport pandas as pd
 import re
 import os
 
@@ -25,7 +25,7 @@ def buscar_columna(df, patrones_regex):
 def procesar_pick_and_place():
     print("🔴 Iniciando ejecución del script...")
 
-    ruta_csv = r"C:\Users\DOBROVOLSKI\Desktop\TrabajoTerminal\PickAndPlace_PCB1_2025-05-06.csv"
+    ruta_csv = r"PickAndPlace_PCB1_2025-05-06.csv"
     print(f"🔍 Leyendo archivo: {ruta_csv}")
 
     try:
@@ -121,7 +121,7 @@ def procesar_pick_and_place():
     df_final = df_filtrado[['Referencia', 'Encapsulado', 'X', 'Y', 'Rotacion', 'Capa', 'Paquete']]
     df_final = df_final.sort_values(by='Referencia').reset_index(drop=True)
 
-    carpeta_destino = r"C:\Users\DOBROVOLSKI\Desktop\TrabajoTerminal"
+    carpeta_destino = r"TrabajoTerminal"
     os.makedirs(carpeta_destino, exist_ok=True)
 
     nombre_base = os.path.splitext(os.path.basename(ruta_csv))[0]
